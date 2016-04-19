@@ -14,10 +14,10 @@ $(document).ready(function(e) {
 	  escribehistoria ('la app se reinició');
   },false);//resume
   document.addEventListener("online",function(){
-	  escribehistoria ('la app se conecto a la red');
+	  red ('la app se conecto a la red');
   },false);//conecto
   document.addEventListener("offline",function(){
-	  escribehistoria ('la app se desconecto de la red');
+	  red ('la app se desconecto de la red');
   },false);//desconecto
   
   },false);//ready device
@@ -25,5 +25,8 @@ $(document).ready(function(e) {
 });//document
 
 function escribehistoria(accion){
+	$('#eHistoria').append('<li>'+accion+'</li>');
+}
+function red(accion){
 	$('#eHistoria').append('<li>'+accion+'</li>');
 }
